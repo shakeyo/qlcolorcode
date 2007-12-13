@@ -1,0 +1,50 @@
+/* This code is licensed under the GPL v2.  See LICENSE.txt for details. */
+
+#import <CoreFoundation/CoreFoundation.h>
+#import <CoreServices/CoreServices.h>
+#import <Foundation/Foundation.h>
+#import <QuickLook/QuickLook.h>
+#import "Common.h"
+
+
+/* -----------------------------------------------------------------------------
+ Generate a preview for file
+ 
+ This function's job is to create preview for designated file
+ ----------------------------------------------------------------------------- */
+
+OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, 
+                               CFURLRef url, CFStringRef contentTypeUTI, 
+                               CFDictionaryRef options)
+{
+    n8log(@"Generating Preview");
+    if (QLPreviewRequestIsCancelled(preview))
+        return noErr;
+    
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
+    // Invoke colorize.sh
+    CFBundleRef bundle = QLPreviewRequestGetGeneratorBundle(preview);
+    int status;
+    NSData *output = colorizeURL(bundle, url, &status, 0);
+    
+    if (status != 0 || QLPreviewRequestIsCancelled(preview)) {
+        goto done;
+    }
+    // Now let WebKit do its thing
+    CFDictionaryRef emptydict = 
+            (CFDictionaryRef)[[[NSDictionary alloc] init] autorelease];
+    QLPreviewRequestSetDataRepresentation(preview, (CFDataRef)output, 
+                                          //kUTTypePlainText,
+                                          kUTTypeHTML, 
+                                          emptydict);
+    
+done:
+    [pool release];
+    return noErr;
+}
+
+void CancelPreviewGeneration(void* thisInterface, QLPreviewRequestRef preview)
+{
+    // implement only if supported
+}
