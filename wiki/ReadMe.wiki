@@ -1,5 +1,8 @@
 #labels Featured
 #A Copy of the ReadMe.txt file included with QLColorCode
+
+Note: Google Code insists that a verbatim block is a code block, so my apologies for the spurious syntax highlighting below.  No, the irony is not lost on me...
+
 {{{
 QLColorCode
 ===========
