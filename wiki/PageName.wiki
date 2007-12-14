@@ -1,4 +1,5 @@
 #summary A copy of the ChangeLog.txt file included with QLColorCode
+#labels Deprecated
 
 {{{
 0.2:
