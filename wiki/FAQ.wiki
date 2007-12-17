@@ -1,8 +1,6 @@
 #summary Frequently Asked Questions
 #labels Featured
 
-= Frequently Asked Questions =
-
 Here are some questions I expect to get.
 
   # *How do I uninstall QLColorCode?*
