@@ -1,4 +1,6 @@
+#summary A copy of the ReadMe.txt file included with QLColorCode
 #labels Featured
+
 QLColorCode
 
 ===========
