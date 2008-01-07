@@ -7,6 +7,13 @@ Here are some questions I expect to get.
     Some day google code will have RSS feeds, but until then your best bet is to subscribe to [http://www.n8gray.org/blog/category/projects/qlcolorcode/feed the QLColorCode RSS feed] on my blog.  You can do this in Mail.app, for example.  You can also use the [http://rssfwd.com RSS FWD] service to have that feed forwarded to you as e-mail if you're not hot on RSS (but really, you should be).
   # *Why doesn't it highlight my Bozoscript .bozo files?*
     The plugin tells the system, "I can display anything of type public.source-code" but it's up to the system to figure out what extensions, mime-types, and such have that type.  For extensions like .c or .py the system already knows that they're source code, but for .bozo and other "exotic" file types somebody needs to tell it.  I've included a few random "interesting" file types in the Info.plist file in the plugin's bundle to take care of this, but it's probably not wise to include everything that Highlight can handle.  Why not?  Well, if two different entities make conflicting claims on a given file extension then only one of them can win.  For the gritty details, see [http://developer.apple.com/documentation/Carbon/Conceptual/understanding_utis/index.html Apple's UTI docs] and [http://lists.apple.com/archives/Quicklook-dev/2007/Nov/msg00043.html this message].
+  # *How can I figure out what QL plugin is being used for a file?*
+    You can use the `qlmanage` tool to figure out what type the OS thinks a given file is and what generator it uses for it.  Here's an example:
+{{{
+[n8gray@golux]% qlmanage -p Notes.txt 2>&1 | grep 'Generator used'
+2008-01-07 13:50:57.476 qlmanage[56917:5f03] [QL] Previewing /Users/n8gray/src/flickr/Notes.txt. Content type UTI: public.plain-text. 
+Generator used: <QLGenerator /System/Library/Frameworks/QuickLook.framework/Resources/Generators/Text.qlgenerator>
+}}}
   # *Can you add support for Bozoscript?*
     [http://www.andre-simon.de/doku/highlight/en/highlight_langs.html If it's supported by Highlight] then the answer is probably yes.  If it's not supported by highlight then the answer is also probably yes, but only if you're willing to write the highlight support.  Assuming the language is supported by highlight, I'll need some info about the language in order to create a Universal Type Identifier for it:
       # The name of the language
