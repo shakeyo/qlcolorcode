@@ -13,8 +13,6 @@ Here are some questions I expect to get.
       # The file extension(s) it uses
       # The website of the organization in charge of the language (if possible)
       # (optional but potentially very helpful) The Info.plist file from a major Mac software package that handles files of this language.
-  # *I hate the default style!  How do I change it?*
-    Take a look at `Contents/Resources/colorize.sh` inside the plugin bundle, and try changing `theme=ide-xcode` to one of the other themes listed.  I would like to make it easier to customize this, but I don't know when I'll have time.  Patches would be appreciated!
   # *I thought QLColorCode used [http://pygments.org Pygments] as its highlighting engine.*
     Sorry, that's not a question.  :-)  Actually, it did use Pygments, but now it uses Highlight.  Pygments is a nice project, but the Highlight engine is about 10x faster and supports more languages.  One nice aspect of QLColorCode's design is that the highlighting engine can be swapped out quite easily if something better comes along.
   # *This is awful!  How do I uninstall QLColorCode?*
