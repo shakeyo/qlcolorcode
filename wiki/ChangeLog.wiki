@@ -1,7 +1,7 @@
 #summary A copy of the ChangeLog.txt file included with QLColorCode
 #labels Featured
 
-0.4:
+0.4.1:  (0.4 was broken!  My bad.)
     * Added Tcl, Lua, and JSP support
     * Can now configure appearance with "defaults write org.n8gray.QLColorCode ..." commands
     * Improved OCaml, C/C++ and Obj-C modes.
