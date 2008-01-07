@@ -1,6 +1,11 @@
 #summary A copy of the ChangeLog.txt file included with QLColorCode
 #labels Featured
 
+0.4:
+    * Added Tcl, Lua, and JSP support
+    * Can now configure appearance with "defaults write org.n8gray.QLColorCode ..." commands
+    * Improved OCaml, C/C++ and Obj-C modes.
+
 0.3:
     * Ensure highlight is compiled as a universal binary
     * If highlight fails to colorize a file render it as plain text
@@ -16,5 +21,4 @@
     * (Try to) let the system pick a different plugin if ours fails
     * Added UTIs for .css, .sql, .erl, and .sml
 
-0.1: 
-    * Initial release
+0.1: Initial release
