@@ -3,6 +3,8 @@
 
 Here are some questions I expect to get.
 
+  # *How will I know when a new version is released?*
+    Some day google code will have RSS feeds, but until then your best bet is to subscribe to [http://www.n8gray.org/blog/category/projects/qlcolorcode/feed the QLColorCode RSS feed] on my blog.  You can do this in Mail.app, for example.  You can also use the [http://rssfwd.com RSS FWD] service to have that feed forwarded to you as e-mail if you're not hot on RSS (but really, you should be).
   # *How do I uninstall QLColorCode?*
     Just drag the bundle from `~/Library/QuickLook` or `/Library/QuickLook` into the trash.
   # *Why doesn't it highlight my Bozoscript .bozo files?*
