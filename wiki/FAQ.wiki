@@ -20,6 +20,7 @@ Generator used: <QLGenerator /System/Library/Frameworks/QuickLook.framework/Reso
       # The file extension(s) it uses
       # The website of the organization in charge of the language (if possible)
       # (optional but potentially very helpful) The Info.plist file from a major Mac software package that handles files of this language.
+    Once you've got that information, mosy on over to the [http://code.google.com/p/qlcolorcode/issues/list Issues] page and file an issue.  That is the *highly* preferred way for you to make new language requests.  If you send them as e-mail, leave them as comments on my blog, or leave them in other random places there's a much higher chance I'll overlook or forget about them.
   # *I thought QLColorCode used [http://pygments.org Pygments] as its highlighting engine.*
     Sorry, that's not a question.  :-)  Actually, it did use Pygments, but now it uses Highlight.  Pygments is a nice project, but the Highlight engine is about 10x faster and supports more languages.  One nice aspect of QLColorCode's design is that the highlighting engine can be swapped out quite easily if something better comes along.
   # *This is awful!  How do I uninstall QLColorCode?*
