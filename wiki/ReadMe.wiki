@@ -25,6 +25,8 @@ the color style (see below):
     defaults write org.n8gray.QLColorCode hlTheme ide-xcode
 any extra command-line flags for Highlight (see below):
     defaults write org.n8gray.QLColorCode extraHLFlags '-l -W'
+the maximum size (in bytes) for previewed files:
+    defaults write org.n8gray.QLColorCode maxFileSize 1000000
 }}}
 
 The following color themes are included with QLColorCode:
