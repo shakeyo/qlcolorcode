@@ -7,6 +7,8 @@ Here are some questions I expect to get.
     Google offers an RSS feed for the "Downloads" page of this project for you to subscribe to.  You can do this in Mail.app, for example.  You can also use the [http://rssfwd.com RSS FWD] service to have that feed forwarded to you as e-mail if you're not hot on RSS (but really, you should be).
   # *Why doesn't it highlight my Bozoscript .bozo files?*
     The plugin tells the system, "I can display anything of type public.source-code" but it's up to the system (Launch Services, to be precise) to figure out what extensions, mime-types, and such have that type.  For extensions like .c or .py the system already knows that they're source code, but for .bozo and other "exotic" file types somebody needs to tell it.  I've included a few random "interesting" file types in the Info.plist file in the plugin's bundle to take care of this, but it's probably not wise to include everything that Highlight can handle.  Why not?  Well, if two different entities make conflicting claims on a given file extension then only one of them can win.  For the gritty details, see [http://developer.apple.com/documentation/Carbon/Conceptual/understanding_utis/index.html Apple's UTI docs] and [http://lists.apple.com/archives/Quicklook-dev/2007/Nov/msg00043.html this message].
+  # *QLCC used to handle my .xyz files but suddenly they stopped working!*
+    This happens to me too.  I suspect sunspots or other disturbances of the luminiferous ether are to blame.  Your best bet is to try the procedures outlined in FAQ 5.
   # *How can I figure out what QL plugin is being used for a file?*
     You can use the `qlmanage` tool to figure out what type the OS thinks a given file is and what generator it uses for it.  Here's an example:
 {{{
@@ -25,7 +27,6 @@ Generator used: <QLGenerator /Users/n8gray/Library/QuickLook/EPSQLPlugIn.qlgener
       * `qlmanage -r` will reset QuickLook's caches.
       * `touch ~/Library/QuickLook/QLColorCode.qlmanager` may get Launch Services' attention.
       * `/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -f -v ~/Library/QuickLook/QLColorCode.qlmanager` should _really_ get Launch Services' attention, but it's hard to type.
-      * Finally, you can always try a reboot.
   # *Can you add official support for Bozoscript?*
     [http://www.andre-simon.de/doku/highlight/en/highlight_langs.html If it's supported by Highlight] then the answer is probably yes.  If it's not supported by highlight then the answer is also probably yes, but only if you're willing to write the highlight support.  Assuming the language is supported by highlight, I'll need some info about the language in order to create a Universal Type Identifier for it:
       # The name of the language
