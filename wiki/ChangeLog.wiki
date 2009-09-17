@@ -1,13 +1,36 @@
 #summary A copy of the ChangeLog.txt file included with QLColorCode
 #labels Featured
+{{{
 
+2.0:
+    * Added a note about conflict with Xcode 3.2's source code QL plugin.  If
+      you're having problems with QLCC on Snow Leopard please read it!
+    * Fixed a bug that caused QLCC to fail on files whose names contained '%'.
+    * Added support for Scala, Groovy, Interactive Data Language, and Coldfusion
+    * Upgrade highlight from 2.6.6 to 2.12 -- This was long overdue.  It's nice 
+      not to have to patch highlight anymore!
+    * Removed customized .css language definition -- it was fixed upstream.
+    * Build for x86_64 in addition to i386 and ppc
+
+1.1:
+    * Enabled "safe" plain-text handling.  In other words, files like foo.txt 
+      will be supported, but not files without extensions.  The only way to
+      handle extensionless files is to handle *everything*.  This can be done,
+      but it requires a more defensive style of operation.
+    * Added support for "textEncoding" option to set encoding for highlight
+      portion of renderer, with default UTF-8.
+    * Added support for "webkitTextEncoding" option to set encoding for webkit
+      portion of renderer, with default UTF-8.
+    * Added support for .cs, .el, .jnlp (xml), .e (eiffel), and .vb
+    * Fixed support for verilog files
+    
 1.0:
     * Hopefully fixed the crasher bug by keeping us single-threaded
     * Added Actionscript, Lisp, IDL, Verilog, VHDL, XHTML  (any others I forgot?)
     * Added .cls and .sty as LaTeX extensions
     * Added maxFileSize option to keep us from hanging on huge files.
 
-0.4.1:  (0.4 was broken!  My bad.)
+0.4:
     * Added Tcl, Lua, and JSP support
     * Can now configure appearance with "defaults write org.n8gray.QLColorCode ..." commands
     * Improved OCaml, C/C++ and Obj-C modes.
@@ -28,3 +51,4 @@
     * Added UTIs for .css, .sql, .erl, and .sml
 
 0.1: Initial release
+}}}
