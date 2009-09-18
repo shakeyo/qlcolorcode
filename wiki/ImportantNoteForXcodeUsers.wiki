@@ -1,0 +1,31 @@
+#labels Featured
+Information on using QLColorCode with Xcode v3.2 and later
+
+= Introduction =
+
+Xcode 3.2 (the version shipped with Snow Leopard) includes a Quick Look plugin that highlights source code.  It only highlights a few languages, so you probably still want to use QLColorCode.  However, the Quick Look server tends to pick the Xcode plugin over QLCC.  To get QLCC to work properly you'll need to disable the Xcode plugin.
+
+= Details =
+
+The Xcode plugin is installed at:
+{{{
+/Developer/Applications/Xcode.app/Contents/Library/QuickLook/SourceCode.qlgenerator
+}}}
+
+The simplest way to disable it is to open Terminal.app and run these commands:
+{{{
+f=/Developer/Applications/Xcode.app/Contents/Library/QuickLook/SourceCode.qlgenerator
+mv $f $f.disabled
+}}}
+
+This will rename the plugin to `SourceCode.qlgenerator.disabled`, which will prevent it from being loaded by `quicklookd`.
+
+= A Note on Code Signing =
+
+The Xcode application is cryptographically signed. Disabling the `SourceCode.qlgenerator` plugin will *NOT* invalidate the signature.  You can confirm this by running this command after disabling the plugin:
+
+{{{
+[n8gray@golux]% codesign -vv /Developer/Applications/Xcode.app
+/Developer/Applications/Xcode.app: valid on disk
+/Developer/Applications/Xcode.app: satisfies its Designated Requirement
+}}}
