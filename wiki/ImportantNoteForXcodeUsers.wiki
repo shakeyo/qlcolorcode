@@ -1,4 +1,6 @@
+#summary Important information on using QLColorCode with Xcode v3.2 and later
 #labels Featured
+
 = Important information on using QLColorCode with Xcode v3.2 and later =
 
 Xcode 3.2 (the version shipped with Snow Leopard) includes a Quick Look plugin that highlights source code.  It only highlights a few languages, so you probably still want to use QLColorCode.  However, the Quick Look server tends to pick the Xcode plugin over QLCC.  This means that for any source code file aside from .c, .m, and the other languages that Xcode understands you'll see a plain text preview with no highlighting.  To get QLCC to work properly you'll need to disable the Xcode plugin.
