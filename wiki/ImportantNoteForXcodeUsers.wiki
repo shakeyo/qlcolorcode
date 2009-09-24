@@ -18,7 +18,7 @@ f=/Developer/Applications/Xcode.app/Contents/Library/QuickLook/SourceCode.qlgene
 sudo mv $f $f.disabled
 }}}
 
-This will rename the plugin to `SourceCode.qlgenerator.disabled`, which will prevent it from being loaded by `quicklookd`.
+This will rename the plugin to `SourceCode.qlgenerator.disabled`, which will prevent it from being loaded by `quicklookd`.  *You will need to repeat this if you upgrade or reinstall Xcode.*
 
 = A Note on Code Signing =
 
