@@ -22,7 +22,7 @@ This will rename the plugin to `SourceCode.qlgenerator.disabled`, which will pre
 
 = A Note on Code Signing =
 
-The Xcode application is cryptographically signed. Disabling the `SourceCode.qlgenerator` plugin will *NOT* invalidate the signature.  You can confirm this by using the `codesign` command after disabling the plugin:
+The Xcode application is cryptographically signed. Disabling the `SourceCode.qlgenerator` plugin is safe: it will *NOT* invalidate the signature.  You can confirm this by using the `codesign` command after disabling the plugin:
 
 {{{
 [n8gray@golux]% codesign -vv /Developer/Applications/Xcode.app
