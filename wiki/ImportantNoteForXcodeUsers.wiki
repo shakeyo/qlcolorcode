@@ -15,8 +15,7 @@ The Xcode plugin is installed at:
 The simplest way to disable it is to open Terminal.app and run these commands:
 {{{
 f=/Developer/Applications/Xcode.app/Contents/Library/QuickLook/SourceCode.qlgenerator
-sudo rm -rf $f.disabled    # It's ok if this gives a "not found" error
-sudo mv $f $f.disabled
+sudo mv -f $f $f.disabled
 }}}
 
 This will rename the plugin to `SourceCode.qlgenerator.disabled`, which will prevent it from being loaded by `quicklookd`.  *You will need to repeat this if you upgrade or reinstall Xcode.*
