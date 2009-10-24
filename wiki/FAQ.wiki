@@ -10,11 +10,21 @@ Here are some questions I expect to get.
   # *QLCC used to handle my .xyz files but suddenly they stopped working!*
     This happens to me too.  I suspect sunspots or other disturbances of the luminiferous ether are to blame.  Your best bet is to try the procedures outlined in FAQ 5.
   # *How can I figure out what QL plugin is being used for a file?*
-    You can use the `qlmanage` tool to figure out what type the OS thinks a given file is and what generator it uses for it.  Here's an example:
+    You can use the `qlmanage` tool to figure out what type the OS thinks a given file is and what generator it uses for it.  Here's a Leopard example:
 {{{
 [n8gray@golux]% qlmanage -p Notes.txt 2>&1 | grep 'Generator used'
 2008-01-07 13:50:57.476 qlmanage[56917:5f03] [QL] Previewing /Users/n8gray/src/flickr/Notes.txt. Content type UTI: public.plain-text. 
 Generator used: <QLGenerator /System/Library/Frameworks/QuickLook.framework/Resources/Generators/Text.qlgenerator>
+}}}
+    In Snow Leopard the command has changed.  You cannot use grep to isolate the line you're interested in.  (Why, Apple, why?)  Luckily it only produces a handful of lines instead of many screens worth:
+{{{
+[n8gray@golux]% qlmanage -d 1 -p beep.c
+Testing Quick Look preview with files:
+        beep.c
+...
+[DEBUG] Previewing /Users/n8gray/src/beep/beep.c. Content type UTI: public.c-source. 
+Generator used: <QLGenerator /Users/n8gray/Library/QuickLook/QLColorCode.qlgenerator>
+...
 }}}
     If you're looking at a file type that Launch Services doesn't know about, you'll see that the `Content type UTI` gets set to dyn.(random junk).  For example:
 {{{
