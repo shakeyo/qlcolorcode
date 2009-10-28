@@ -5,9 +5,21 @@
 
 Xcode 3.2 (the version shipped with Snow Leopard) includes a Quick Look plugin that highlights source code.  It only highlights a few languages, so you probably still want to use QLColorCode.  However, the Quick Look server tends to pick the Xcode plugin over QLCC.  This means that for any source code file aside from .c, .m, and the other languages that Xcode understands you'll see a plain text preview with no highlighting.  To get QLCC to work properly you'll need to disable the Xcode plugin.
 
+= Symptoms =
+
+If you're having this problem you'll notice that:
+
+  # `.c`, `.m`, and other "Xcode-approved" file types have highlighting.  (The Xcode plugin handles them)
+  # More obscure file types (`.ml`, `.scala`, `.as`, etc) do *not* have highlighting.  (The Xcode plugin knows they're source code, thanks to QLCC, but doesn't know how to highlight them.)  To test this, put the following into a file called `foo.ml` and quick look it.  If the `open` keywords are not highlighted then you're experiencing the problem:
+      {{{
+open Foo
+open Bar
+}}}
+  # `.plist` files display as XML, with highlighting.  (Xcode's plugin doesn't accept `.plist` files, so QLCC still gets them.  If this doesn't work then QLCC isn't installed properly.)
+
 = Scripts =
 
-*I have created two Applescripts to easily disable and restore the XCode plugin with a simple double-click.*  They can be found in the Downloads section, named `QLColorCodeScripts`.  If you want to know how to do it by hand, read on.
+*I have created two Applescripts to easily disable and restore the Xcode plugin with a simple double-click.*  They can be found in the Downloads section, named `QLColorCodeScripts`.  If you want to know how to do it by hand, read on.
 
 = Details =
 
