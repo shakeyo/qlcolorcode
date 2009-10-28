@@ -5,6 +5,10 @@
 
 Xcode 3.2 (the version shipped with Snow Leopard) includes a Quick Look plugin that highlights source code.  It only highlights a few languages, so you probably still want to use QLColorCode.  However, the Quick Look server tends to pick the Xcode plugin over QLCC.  This means that for any source code file aside from .c, .m, and the other languages that Xcode understands you'll see a plain text preview with no highlighting.  To get QLCC to work properly you'll need to disable the Xcode plugin.
 
+= Scripts =
+
+*I have created two Applescripts to easily disable and restore the XCode plugin with a simple double-click.*  They can be found in the Downloads section, named `QLColorCodeScripts`.  If you want to know how to do it by hand, read on.
+
 = Details =
 
 The Xcode plugin is installed at:
@@ -15,7 +19,8 @@ The Xcode plugin is installed at:
 The simplest way to disable it is to open Terminal.app and run these commands:
 {{{
 f=/Developer/Applications/Xcode.app/Contents/Library/QuickLook/SourceCode.qlgenerator
-sudo mv -f $f $f.disabled
+sudo mv $f.disabled /tmp/   # Move aside any previously disabled version
+sudo mv $f $f.disabled
 }}}
 
 This will rename the plugin to `SourceCode.qlgenerator.disabled`, which will prevent it from being loaded by `quicklookd`.  *You will need to repeat this if you upgrade or reinstall Xcode.*
